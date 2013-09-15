@@ -5,6 +5,7 @@ import org.junit.Test;
 public class InternetTest extends AbstractFakerTest {
     // TODO
     @Test
-    public void test() {            
+    public void emailIsOk() {
+        assertStringNotNullOrEmpty(faker.Internet.email());
     }
 }

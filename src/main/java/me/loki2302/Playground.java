@@ -6,8 +6,7 @@ public class Playground {
     public static void main(String[] args) {
         Faker faker = Faker.make();
         
-        System.out.println(faker.Name.firstName());
-        System.out.println(faker.Name.lastName());
         System.out.println(faker.Name.findName());
+        System.out.println(faker.Internet.email());
     }
 }
