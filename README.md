@@ -1,7 +1,7 @@
 fakerj
 ======
 
-Java bindings to Faker.js
+Java bindings to [Faker.js](https://github.com/Marak/Faker.js/)
 
 Maven
 =====
