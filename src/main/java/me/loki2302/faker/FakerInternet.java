@@ -6,8 +6,15 @@ public interface FakerInternet {
     @JavaScript("window.Faker.Internet.email()")
     String email();
     
-    // TODO: userName
-    // TODO: domainName
-    // TODO: domainWord
-    // TODO: ip
+    @JavaScript("window.Faker.Internet.userName()")
+    String userName();    
+    
+    @JavaScript("window.Faker.Internet.domainName()")
+    String domainName();
+    
+    @JavaScript("window.Faker.Internet.domainWord()")
+    String domainWord();
+    
+    @JavaScript("window.Faker.Internet.ip()")
+    String ip();
 }

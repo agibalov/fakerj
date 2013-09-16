@@ -1,6 +1,8 @@
 package me.loki2302.faker;
 
-public interface FakerAddress {     
+public interface FakerAddress {
+    
+    
     // TODO: zipCode
     // TODO: zipCodeFormat
     // TODO: city
