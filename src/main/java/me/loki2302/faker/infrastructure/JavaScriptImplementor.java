@@ -43,7 +43,7 @@ public class JavaScriptImplementor {
     }
     
     private static JavaScriptResultMapper decideResultMapperForReturnType(Class<?> clazz) {
-        if(clazz.equals(String.class)) {
+        if(clazz.equals(String.class) || clazz.equals(double.class)) {
             return new PrimitiveTypeMapper(clazz);
         }
         

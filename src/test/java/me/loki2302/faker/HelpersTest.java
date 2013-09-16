@@ -1,6 +1,5 @@
 package me.loki2302.faker;
 
-import static org.junit.Assert.*;
 import me.loki2302.faker.dto.UserCard;
 import me.loki2302.faker.dto.UserCardAddress;
 import me.loki2302.faker.dto.UserCardAddressGeo;
@@ -41,9 +40,7 @@ public class HelpersTest extends AbstractFakerTest {
     }
     
     private static void assertUserCardAddressGeoIsOk(UserCardAddressGeo userCardAddressGeo) {
-        assertTrue(userCardAddressGeo.lat >= -90.0);
-        assertTrue(userCardAddressGeo.lat <= 90.0);
-        assertTrue(userCardAddressGeo.lng >= -180.0);
-        assertTrue(userCardAddressGeo.lng <= 180.0);
-    }
+        assertLatitudeIsOk(userCardAddressGeo.lat);
+        assertLongitudeIsOk(userCardAddressGeo.lng);
+    }   
 }

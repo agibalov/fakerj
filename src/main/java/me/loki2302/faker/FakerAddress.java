@@ -1,18 +1,37 @@
 package me.loki2302.faker;
 
+import me.loki2302.faker.infrastructure.JavaScript;
+
 public interface FakerAddress {
-    
-    
-    // TODO: zipCode
+    @JavaScript("window.Faker.Address.zipCode()")
+    String zipCode();
+        
     // TODO: zipCodeFormat
-    // TODO: city
-    // TODO: streetName
+    
+    @JavaScript("window.Faker.Address.city()")
+    String city();
+    
+    @JavaScript("window.Faker.Address.streetName()")
+    String streetName();
+    
     // TODO: streetAddress
-    // TODO: secondaryAddress
+    
+    @JavaScript("window.Faker.Address.secondaryAddress()")
+    String secondaryAddress();
+    
     // TODO: brState
-    // TODO: ukCounty
-    // TODO: ukCountry
+    
+    @JavaScript("window.Faker.Address.ukCounty()")
+    String ukCounty();
+    
+    @JavaScript("window.Faker.Address.ukCountry()")
+    String ukCountry();
+    
     // TODO: usState
-    // TODO: latitude
-    // TODO: longitude
+    
+    @JavaScript("window.Faker.Address.latitude()")
+    double latitude();
+    
+    @JavaScript("window.Faker.Address.longitude()")
+    double longitude();
 }
