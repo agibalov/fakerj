@@ -1,20 +1,31 @@
 package me.loki2302.faker;
 
-import me.loki2302.faker.infrastructure.JavaScript;
+import me.loki2302.faker.infrastructure.JavaScriptEvaluator;
 
-public interface FakerInternet {   
-    @JavaScript("window.Faker.Internet.email()")
-    String email();
+public class FakerInternet {   
+    private final JavaScriptEvaluator javaScriptEvaluator;
     
-    @JavaScript("window.Faker.Internet.userName()")
-    String userName();    
+    public FakerInternet(JavaScriptEvaluator javaScriptEvaluator) {
+        this.javaScriptEvaluator = javaScriptEvaluator;
+    }
     
-    @JavaScript("window.Faker.Internet.domainName()")
-    String domainName();
+    public String email() {
+        return javaScriptEvaluator.evaluate("window.Faker.Internet", "email", String.class);
+    }
     
-    @JavaScript("window.Faker.Internet.domainWord()")
-    String domainWord();
+    public String userName() {
+        return javaScriptEvaluator.evaluate("window.Faker.Internet", "userName", String.class);
+    }    
     
-    @JavaScript("window.Faker.Internet.ip()")
-    String ip();
+    public String domainName() {
+        return javaScriptEvaluator.evaluate("window.Faker.Internet", "domainName", String.class);
+    }
+    
+    public String domainWord() {
+        return javaScriptEvaluator.evaluate("window.Faker.Internet", "domainWord", String.class);
+    }
+    
+    public String ip() {
+        return javaScriptEvaluator.evaluate("window.Faker.Internet", "ip", String.class);
+    }
 }

@@ -3,7 +3,6 @@ package me.loki2302.faker;
 import java.io.IOException;
 
 import me.loki2302.faker.infrastructure.JavaScriptEvaluator;
-import me.loki2302.faker.infrastructure.JavaScriptImplementor;
 
 public class Faker {
     public final FakerName Name;
@@ -41,17 +40,15 @@ public class Faker {
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
-        }        
+        }      
         
-        JavaScriptImplementor javaScriptImplementor = new JavaScriptImplementor(javaScriptEvaluator);        
-        
-        FakerName fakerName = javaScriptImplementor.implement(FakerName.class);
-        FakerAddress fakerAddress = javaScriptImplementor.implement(FakerAddress.class);
-        FakerPhoneNumber fakerPhoneNumber = javaScriptImplementor.implement(FakerPhoneNumber.class);
-        FakerInternet fakerInternet = javaScriptImplementor.implement(FakerInternet.class);
-        FakerCompany fakerCompany = javaScriptImplementor.implement(FakerCompany.class);
-        FakerLorem fakerLorem = javaScriptImplementor.implement(FakerLorem.class);
-        FakerHelpers fakerHelpers = javaScriptImplementor.implement(FakerHelpers.class);
+        FakerName fakerName = new FakerName(javaScriptEvaluator);
+        FakerAddress fakerAddress = new FakerAddress(javaScriptEvaluator);
+        FakerPhoneNumber fakerPhoneNumber = new FakerPhoneNumber(javaScriptEvaluator);
+        FakerInternet fakerInternet = new FakerInternet(javaScriptEvaluator); 
+        FakerCompany fakerCompany = new FakerCompany(javaScriptEvaluator); 
+        FakerLorem fakerLorem = new FakerLorem(javaScriptEvaluator);
+        FakerHelpers fakerHelpers = new FakerHelpers(javaScriptEvaluator);
         
         return new Faker(
                 fakerName,

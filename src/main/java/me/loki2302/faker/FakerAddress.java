@@ -1,37 +1,51 @@
 package me.loki2302.faker;
 
-import me.loki2302.faker.infrastructure.JavaScript;
+import me.loki2302.faker.infrastructure.JavaScriptEvaluator;
 
-public interface FakerAddress {
-    @JavaScript("window.Faker.Address.zipCode()")
-    String zipCode();
+public class FakerAddress {    
+    private final JavaScriptEvaluator javaScriptEvaluator;
+    
+    public FakerAddress(JavaScriptEvaluator javaScriptEvaluator) {
+        this.javaScriptEvaluator = javaScriptEvaluator;
+    }
+    
+    public String zipCode() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "zipCode", String.class);
+    }
         
     // TODO: zipCodeFormat
     
-    @JavaScript("window.Faker.Address.city()")
-    String city();
+    public String city() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "city", String.class);
+    }
     
-    @JavaScript("window.Faker.Address.streetName()")
-    String streetName();
+    public String streetName() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "streetName", String.class);
+    }
     
     // TODO: streetAddress
-    
-    @JavaScript("window.Faker.Address.secondaryAddress()")
-    String secondaryAddress();
+        
+    public String secondaryAddress() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "secondaryAddress", String.class);
+    }
     
     // TODO: brState
-    
-    @JavaScript("window.Faker.Address.ukCounty()")
-    String ukCounty();
-    
-    @JavaScript("window.Faker.Address.ukCountry()")
-    String ukCountry();
+        
+    public String ukCounty() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "ukCounty", String.class);
+    }
+        
+    public String ukCountry() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "ukCountry", String.class);
+    }
     
     // TODO: usState
     
-    @JavaScript("window.Faker.Address.latitude()")
-    double latitude();
+    public double latitude() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "latitude", Double.class);
+    }
     
-    @JavaScript("window.Faker.Address.longitude()")
-    double longitude();
+    public double longitude() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "longitude", Double.class);
+    }
 }
