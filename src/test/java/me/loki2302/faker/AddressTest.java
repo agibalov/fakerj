@@ -8,7 +8,15 @@ public class AddressTest extends AbstractFakerTest {
         assertStringNotNullOrEmpty(faker.Address.zipCode());
     }
     
-    // TODO: zipCodeFormat
+    @Test
+    public void zipCodeFormatShortIsOk() {
+        assertStringNotNullOrEmpty(faker.Address.zipCodeFormatShort());
+    }
+    
+    @Test
+    public void zipCodeFormatLongIsOk() {
+        assertStringNotNullOrEmpty(faker.Address.zipCodeFormatLong());
+    }    
     
     @Test
     public void cityIsOk() {

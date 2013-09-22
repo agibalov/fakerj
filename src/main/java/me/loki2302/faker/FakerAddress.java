@@ -12,8 +12,14 @@ public class FakerAddress {
     public String zipCode() {
         return javaScriptEvaluator.evaluate("window.Faker.Address", "zipCode", String.class);
     }
-        
-    // TODO: zipCodeFormat
+    
+    public String zipCodeFormatShort() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "zipCode", String.class, 0);
+    }
+    
+    public String zipCodeFormatLong() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "zipCode", String.class, 1);
+    }
     
     public String city() {
         return javaScriptEvaluator.evaluate("window.Faker.Address", "city", String.class);

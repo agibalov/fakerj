@@ -17,7 +17,7 @@ public class JavaScriptEvaluator {
     private Scriptable scope;
     
     public JavaScriptEvaluator() {
-        context = Context.enter();            
+        context = Context.enter();
         scope = context.initStandardObjects();
     }
     
