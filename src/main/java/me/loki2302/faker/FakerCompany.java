@@ -10,7 +10,15 @@ public class FakerCompany {
     }
     
     // TODO: suffixes
-    // TODO: companyName
+    
+    public String companyName() {
+        return javaScriptEvaluator.evaluate("window.Faker.Company", "companyName", String.class);
+    }
+    
+    public String companyName(int format) {
+        return javaScriptEvaluator.evaluate("window.Faker.Company", "companyName", String.class, format);
+    }
+    
     // TODO: companySuffix
     // TODO: catchPhrase
     // TODO: bs
