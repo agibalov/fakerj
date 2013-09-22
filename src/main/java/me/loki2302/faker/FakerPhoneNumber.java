@@ -8,7 +8,12 @@ public class FakerPhoneNumber {
     public FakerPhoneNumber(JavaScriptEvaluator javaScriptEvaluator) {
         this.javaScriptEvaluator = javaScriptEvaluator;
     }
+        
+    public String phoneNumber() {
+        return javaScriptEvaluator.evaluate("window.Faker.PhoneNumber", "phoneNumber", String.class);
+    }
     
-    // TODO: phoneNumber
-    // TODO: phoneNumberFormat
+    public String phoneNumberFormat(int format) {
+        return javaScriptEvaluator.evaluate("window.Faker.PhoneNumber", "phoneNumberFormat", String.class, format);
+    }
 }

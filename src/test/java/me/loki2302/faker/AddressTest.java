@@ -9,12 +9,8 @@ public class AddressTest extends AbstractFakerTest {
     }
     
     @Test
-    public void zipCodeFormat0IsOk() {
+    public void zipCodeFormatIsOk() {
         assertStringNotNullOrEmpty(faker.Address.zipCodeFormat(0));
-    }
-    
-    @Test
-    public void zipCodeFormat1IsOk() {
         assertStringNotNullOrEmpty(faker.Address.zipCodeFormat(1));
     }    
     
