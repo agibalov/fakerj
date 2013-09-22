@@ -25,7 +25,13 @@ public class FakerAddress {
         return javaScriptEvaluator.evaluate("window.Faker.Address", "streetName", String.class);
     }
     
-    // TODO: streetAddress
+    public String streetAddress() {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "streetAddress", String.class);
+    }
+    
+    public String streetAddress(boolean useFullAddress) {
+        return javaScriptEvaluator.evaluate("window.Faker.Address", "streetAddress", String.class, useFullAddress);
+    }
         
     public String secondaryAddress() {
         return javaScriptEvaluator.evaluate("window.Faker.Address", "secondaryAddress", String.class);

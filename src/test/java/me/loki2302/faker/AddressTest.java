@@ -23,8 +23,13 @@ public class AddressTest extends AbstractFakerTest {
     public void streetNameIsOk() {
         assertStringNotNullOrEmpty(faker.Address.streetName());
     }
-    
-    // TODO: streetAddress
+
+    @Test
+    public void streetAddressIsOk() {
+        assertStringNotNullOrEmpty(faker.Address.streetAddress());
+        assertStringNotNullOrEmpty(faker.Address.streetAddress(true));
+        assertStringNotNullOrEmpty(faker.Address.streetAddress(false));
+    }
     
     @Test
     public void secondaryAddressIsOk() {
