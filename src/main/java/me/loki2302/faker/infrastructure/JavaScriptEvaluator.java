@@ -28,6 +28,7 @@ public class JavaScriptEvaluator {
         context.evaluateString(scope, resourceContents, resourceName, 1, null);
     }
     
+    @SuppressWarnings("unchecked")
     public <T> T evaluate(String objExpression, String funcName, Class<T> returnClass, Object... args) {
         Scriptable obj = (Scriptable)context.evaluateString(scope, objExpression, "command", 1, null);
         Function func = (Function)obj.get(funcName, obj);
