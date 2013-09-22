@@ -1,10 +1,8 @@
-fakerj
-======
+# fakerj [![Build Status](https://travis-ci.org/loki2302/fakerj.png?branch=master)](https://travis-ci.org/loki2302/fakerj)
 
 Java bindings to [Faker.js](https://github.com/Marak/Faker.js/)
 
-Maven
-=====
+# Maven
 
     <repositories>
       <repository>
